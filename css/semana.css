@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.cardapio {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  max-width: 940px;
+  margin: 50px auto;
+  background-color: #f4b72e;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #1d2022;
+  font-weight: 600;
+}
+
+label {
+  font-size: 1rem;
+  color: #1d2022;
+}
+
+p.form-control-plaintext {
+  padding: 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f8f9fa;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .cardapio {
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  label,
+  p.form-control-plaintext,
+  .text-center p {
+    font-size: 0.875rem; 
+  }
+}

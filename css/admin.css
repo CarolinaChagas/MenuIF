@@ -1,0 +1,70 @@
+/* CSS básico para o painel de administração */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.admin-container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    background-color: #f4b72e;
+    color: #31373c; 
+    width: 250px;
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+}
+
+.sidebar h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 50px;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: #31373c; 
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background-color: #e86623; 
+}
+
+.content {
+    margin-left: 300px; /* Deixa espaço para o menu lateral */
+    padding: 20px;
+    width: 100%;
+    background-color: #fff;
+    height: 100%;
+    overflow-y: auto;
+    color: #31373c;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: #31373c;
+}

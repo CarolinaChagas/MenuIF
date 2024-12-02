@@ -1,0 +1,143 @@
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f4b72e;
+    flex-wrap: wrap;
+}
+
+header nav .logo img {
+    max-width: 100px;
+    height: auto;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 350px;
+}
+
+.menu ul li {
+    font-size: 18px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.menu ul li a {
+    color: #31373c;
+    text-decoration: none;
+}
+
+.menu ul li a:hover {
+    color: #e86623;
+}
+
+header nav .login img {
+    width: 35px;
+    height: auto;
+    transition: transform 0.2s;
+    margin-left: 50px;
+    margin-right: 20px;
+}
+
+header nav .login:hover img {
+    transform: scale(1.1);
+}
+
+.menu ul li .dropdown-menu {
+    display: none;
+    background-color: #31373c; 
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.menu ul li:hover .dropdown-menu {
+    display: block;
+}
+
+.menu ul li .dropdown-menu .dropdown-item {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.menu ul li .dropdown-menu .dropdown-item:hover {
+    background-color: #44494c;
+}
+
+footer {
+    background-color: #f4b72e;
+    color: #31373c; 
+    padding: 40px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer h5.footer-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+footer .social-links li,
+footer .footer-links li {
+    margin-bottom: 10px;
+}
+
+footer .social-links a,
+footer .footer-links a {
+    color: #31373c; 
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+footer .social-links a:hover,
+footer .footer-links a:hover {
+    color:  #e86623; 
+}
+
+footer .footer-bottom {
+    background-color: #1d2022;
+    color: #f4b72e;
+}
+
+footer .footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+}
+
+
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu ul li {
+        font-size: 16px;
+    }
+
+    .menu ul li .dropdown-menu {
+        position: absolute;
+        background-color: #31373c;
+        width: 200px;
+    }
+
+    footer .row {
+        text-align: center;
+    }
+
+    footer .col-md-4 {
+        margin-bottom: 30px;
+    }
+}
