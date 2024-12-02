@@ -36,10 +36,10 @@ Ao desenvolver o projeto foram encontradas dificuldades, entre elas:
 
 1. Nunca ter trabalhado com MVC;   
 2. Mysql ter dado erro de versão (3 dias tentando fazer ele funcionar e após isso perder tempo de desenvolvimento do projeto);  
-3. Nunca ter tentado hospedar um projeto com servidor web;
+3. Nunca ter hospedado um projeto com servidor web;
 
 Para a dificuldade do MVC foi encontrado uma vídeo-aula explicativa no Youtube que ajudou bastante.
 
 Link: [https://www.youtube.com/watch?v=w7p2UI7K8m0\&t=3968s](https://www.youtube.com/watch?v=w7p2UI7K8m0&t=3968s)  
 
-Não consegui hospedar em um servidor web.
+Não consegui hospedar o projeto em um servidor web.
