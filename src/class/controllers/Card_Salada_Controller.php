@@ -6,7 +6,7 @@
     class Card_Salada_Controller {
 
         function Listar(){
-            $servidor = 'pgsql:host=localhost;dbname=menuif';
+            $servidor = 'pgsql:host=carol-db;dbname=menuif';
             $usuario = 'postgres';
             $senha = '1234';
             $card_saladas = [];
