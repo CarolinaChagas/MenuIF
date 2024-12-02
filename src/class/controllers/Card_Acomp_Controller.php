@@ -1,44 +1,42 @@
 <?php
 
     require_once 'Cardapio_Controller.php';
-    require_once 'Sobremesa_Controller.php';
+    require_once 'Acompanhamento_Controller.php';
 
-    class Card_Sobremesa_Controller {
+    class Card_Acomp_Controller {
 
         function Listar(){
-            $servidor = 'pgsql:host=localhost;dbname=menuif';
+            $servidor = 'pgsql:host=carol-db;dbname=menuif';
             $usuario = 'postgres';
             $senha = '1234';
-            $card_sobremesas = [];
+            $card_acomps = [];
 
             try {
                 $pdo = new PDO($servidor, $usuario, $senha);
                 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                $cSQL = $pdo->prepare('select id_card_sobremesa, id_cardapio, id_sobremesa from card_sobremesa;');
+                $cSQL = $pdo->prepare('select id_card_acomp, id_cardapio, id_acompanhamento from card_acomp;');
                 $cSQL->execute();
 
                 $cardapioController = new Cardapio_Controller();
-                $sobremesaController = new Sobremesa_Controller();
+                $acompanhamentoController = new Acompanhamento_Controller();
 
                 while ($dados = $cSQL->fetch(PDO::FETCH_ASSOC)) {
-                    $id_card_sobremesa = $dados['id_card_sobremesa'];
+                    $id_card_acomp = $dados['id_card_acomp'];
                     $id_cardapio = $dados['id_cardapio'];
-                    $id_sobremesa = $dados['id_sobremesa'];
-                    
-                    $cardapio = $cardapioController->BuscarPorId($id_cardapio);
-                    $sobremesa = $sobremesaController->BuscarPorId($id_sobremesa);
+                    $id_acompanhamento = $dados['id_acompanhamento'];
 
-                    if($cardapio && $sobremesa){
-                        $card_sobremesa = new Card_Sobremesa($id_card_sobremesa, $cardapio, $sobremesa);
-                        array_push($card_sobremesas, $card_sobremesa);
+                    $cardapio = $cardapioController->BuscarPorId($id_cardapio);
+                    $acompanhamento = $acompanhamentoController->BuscarPorId($id_acompanhamento);
+    
+                    if ($cardapio && $acompanhamento) { 
+                        $card_acomp = new Card_Acomp($id_card_acomp, $cardapio, $acompanhamento);
+                        array_push($card_acomps, $card_acomp);
                     }
 
                     else{
                         return null;
                     }
-
                 }
-
                 $pdo = null;
             } 
             
@@ -46,7 +44,7 @@
                 echo 'Erro: ' . $e->getMessage();
             }
 
-            return $card_sobremesas;
+            return $card_acomps;
         }
     }
 ?>

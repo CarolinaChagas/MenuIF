@@ -1,0 +1,39 @@
+services:
+  db:
+    image: postgres:16.0
+    container_name: carol-db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: menuif
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./db:/docker-entrypoint-initdb.d
+    networks:
+      - carol-network
+
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: carol-web
+    restart: always
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - db
+    networks:
+      - carol-network
+
+volumes:
+  db_data:
+
+
+networks:
+  carol-network:
+    driver: bridge

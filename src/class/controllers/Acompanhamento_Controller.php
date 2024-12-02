@@ -3,7 +3,7 @@
     class Acompanhamento_Controller {
 
         function BuscarPorId($id_acompanhamento) {
-            $servidor = 'pgsql:host=localhost;dbname=menuif';
+            $servidor = 'pgsql:host=carol-db;dbname=menuif';
             $usuario = 'postgres';
             $senha = '1234';
 

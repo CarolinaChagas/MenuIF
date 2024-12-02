@@ -8,7 +8,7 @@
 
         function Listar(){
             
-            $servidor = 'pgsql:host=localhost;dbname=menuif';
+            $servidor = 'pgsql:host=carol-db;dbname=menuif';
             $usuario = 'postgres';
             $senha = '1234';
             $cardapios = [];
@@ -65,7 +65,7 @@
         }
 
         function BuscarPorId($id_cardapio) {
-            $servidor = 'pgsql:host=localhost;dbname=menuif';
+            $servidor = 'pgsql:host=carol-db;dbname=menuif';
             $usuario = 'postgres';
             $senha = '1234';
     
